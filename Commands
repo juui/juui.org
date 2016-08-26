@@ -1,0 +1,3 @@
+# NPM
+
+```sudo curl -k -L https://npmjs.org/install.sh | sudo sh```
