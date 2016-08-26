@@ -1,7 +1,4 @@
-# threejs-demos
-
-Threejs Examples
-
+# Juui Project
 
 #### Instructions (Tested on Ubuntu 16.04)
 
