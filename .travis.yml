@@ -1,0 +1,14 @@
+before_script:
+  - npm install gulpjs/gulp#4.0
+  - npm install
+  - npm install -g gulpjs/gulp-cli;
+
+script: gulp test
+
+languaje: node_js
+
+env:
+  - PORT=7777
+
+node_js:
+  - "6.4.0"

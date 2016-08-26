@@ -34,5 +34,9 @@
     "jsonfile": "^2.3.1",
     "pug": "^2.0.0-beta5",
     "vision": "^4.1.0"
+  },
+  "devDependencies": {
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-hub": "^0.8.0"
   }
 }
