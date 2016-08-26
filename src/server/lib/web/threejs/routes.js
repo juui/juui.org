@@ -15,23 +15,6 @@ const routes = [
       tags: ['web'],
       validate: {}
     }
-  },
-  {
-    method: 'GET',
-    path: '/{path*}',
-    handler: {
-      directory: {
-        path: './',
-        redirectToSlash: true
-      }
-    },
-    config: {
-      tags: ['web'],
-      auth: false,
-      validate: {
-        query: {}
-      }
-    }
   }
 ];
 

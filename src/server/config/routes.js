@@ -1,9 +1,11 @@
 'use strict';
 
-const staticFilesThreejs = require('./../lib/web/threejs/routes');
+const staticFiles = require('./../lib/web/routes');
+const threejs = require('./../lib/web/threejs/routes');
 
 const routes = [
-  ...staticFilesThreejs
+  ...staticFiles,
+  ...threejs
 ];
 
 module.exports = routes;
