@@ -1,13 +1,14 @@
-languaje: node_js
+language: node_js
 node_js:
-  - "6.4.0"
+  - "6"
 
 before_script:
   - npm install -g npm@latest
   - npm install -g gulpjs/gulp-cli bower pug stylus
   - npm install
 
-script: gulp test
+script:
+  - gulp test
 
 env:
   - PORT=7777
