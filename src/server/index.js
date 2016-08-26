@@ -48,7 +48,7 @@ function setupConnections() {
       labels: 'api',
       routes: {
         files: {
-          relativeTo: __dirname + '/../client/public/'
+          relativeTo: __dirname + '/../clients/',
         },
         cors: true
       }
@@ -95,7 +95,7 @@ function setupRoutes() {
         module: require('pug')
       }
     },
-    path: __dirname + '/../client/public/',
+    path: __dirname + '/../clients/',
     compileOptions: {},
     isCached: false
   });
