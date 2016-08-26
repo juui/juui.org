@@ -1,7 +1,6 @@
 before_script:
-  - npm install gulpjs/gulp#4.0
+  - npm i -g gulpjs/gulp-cli bower pug stylus
   - npm install
-  - npm install -g gulpjs/gulp-cli;
 
 script: gulp test
 
