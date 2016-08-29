@@ -4,6 +4,7 @@
   "description": "juui web application",
   "main": "index.js",
   "scripts": {
+    "start": "node ./src/server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,6 +17,10 @@
     "3d",
     "threejs"
   ],
+  "engines": {
+    "node": "6.4.x",
+    "npm": "3.10.x"
+  },
   "author": "Rubenabix",
   "license": "MIT",
   "bugs": {
