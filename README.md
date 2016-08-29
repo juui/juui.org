@@ -1,4 +1,4 @@
-# Juui Project
+# Juui Project [![Build Status](https://travis-ci.org/juui/juui.org.svg?branch=master)](https://travis-ci.org/juui/juui.org)
 
 #### Instructions (Tested on Ubuntu 16.04)
 
