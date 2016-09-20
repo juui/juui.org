@@ -1,17 +1,30 @@
-var Mongoose = require('mongoose');
-var Schema = Mongoose.Schema;
+const Mongoose = require('mongoose');
+const Schema = Mongoose.Schema;
 
-// The data schema for an event that we're tracking in our analytics engine
-var topics = new Schema({
-  category: {type: String, required: true, trim: true},
-  action: {type: String, required: true, trim: true},
-  label: {type: String, trim: true},
-  source: {type: String, required: true, trim: true},       // Usually the IP address
-  dateCreated: {type: Date, required: true, default: Date.now}
+const subTopicSchema = new Schema({
+  label: {
+    type: String, required: true, trim: true
+  },
+  key: {
+    type: String, required: true, trim: true
+  }
 });
 
-var analyticEvent = Mongoose.model('analytic_event', analyticEventSchema);
+const topicSchema = new Schema({
+  label: {
+    type: String, required: true, trim: true
+  },
+  key: {
+    type: String, required: true, trim: true
+  },
+  subTopics: [subTopicSchema],
+  dateCreated: {
+    type: Date, required: true, default: Date.now
+  }
+});
+
+const Topic = Mongoose.model('topics', topicSchema);
 
 module.exports = {
-  AnalyticEvent: analyticEvent
+  Topic
 };
