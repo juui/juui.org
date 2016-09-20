@@ -10,14 +10,10 @@ function getSubTopics(options) {
 
     coroutine(function*() {
 
-      const topic = options.input.topic;
       const subTopics = utils.getSubTopics(options);
 
       resolve(
         {
-          topic: {
-            label: ''
-          },
           subTopics
         }
       );
