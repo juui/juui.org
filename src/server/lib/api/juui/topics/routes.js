@@ -23,19 +23,19 @@ var routes = [
     }
   },
   {
-    method: 'PUT',
-    path: `/api/topics/${constants.version}/list`,
+    method: 'GET',
+    path: `/api/topics/${constants.version}/details`,
     config: {
       auth: false,
       // auth: {
       //   strategies: []
       // },
-      handler: handlers.getSubTopics,
+      handler: handlers.getSubTopicDetails,
       description: 'Add subtopic list',
       notes: 'Subtopic list.',
       tags: ['api', 'topics', 'menu'],
       validate: {
-        query: validators.getSubTopics
+        query: validators.getSubTopicDetails
       }
     }
   }

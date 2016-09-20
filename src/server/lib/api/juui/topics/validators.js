@@ -9,8 +9,16 @@ let getSubTopics = Joi.object({})
       .required()
   });
 
+let getSubTopicDetails = Joi.object({})
+  .keys({
+    detailsKey: Joi.string().trim().lowercase()
+      .description('Topic and subTopic key').example('functions:introduction')
+      .required()
+  });
+
 const validators = {
-  getSubTopics
+  getSubTopics,
+  getSubTopicDetails
 };
 
 module.exports = validators;

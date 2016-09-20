@@ -10,7 +10,7 @@ function getSubTopics(options) {
 
     coroutine(function*() {
 
-      const subTopics = utils.getSubTopics(options);
+      const subTopics = yield utils.getSubTopics(options);
 
       resolve(
         {
@@ -26,9 +26,32 @@ function getSubTopics(options) {
 
 }
 
+function getSubTopicDetails(options) {
+
+  return new Promise((resolve, reject)=> {
+
+    coroutine(function*() {
+
+      const details = yield utils.getSubTopicDetails(options);
+
+      resolve(
+        {
+          details
+        }
+      );
+
+    })().catch((error)=> {
+      reject(error);
+    });
+
+  });
+
+}
+
 
 const manager = {
-  getSubTopics
+  getSubTopics,
+  getSubTopicDetails
 };
 
 module.exports = manager;

@@ -30,12 +30,22 @@ const topics = {
 };
 
 function getSubTopics(options) {
-  const topic = options.input.topic;
-  return topics[topic] || [];
+  return new Promise((resolve, reject)=>{
+    const topic = options.input.topic;
+    resolve(topics[topic] || []);
+  });
+}
+
+function getSubTopicDetails(options) {
+  return new Promise((resolve, reject)=>{
+    const topic = options.input.topic;
+    resolve(topics[topic] || []);
+  });
 }
 
 const utils = {
-  getSubTopics
+  getSubTopics,
+  getSubTopicDetails
 };
 
 module.exports = utils;
