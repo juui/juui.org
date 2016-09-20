@@ -1,0 +1,28 @@
+{
+  "pathPrefixSize": 2,
+  "basePath": "/api",
+  "info": {
+    "title": "Juui API Documentation",
+    "description": "Juui Web Educative Application",
+    "version": "0.0.1",
+    "termsOfService": "https://github.com/glennjones/hapi-swagger/",
+    "contact": {
+      "email": "rubenabix@gmail.com"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://raw.githubusercontent.com/juui/juui.org/master/LICENSE"
+    }
+  },
+  "tags": [
+    {
+      "name": "topics",
+      "description": "Topics available",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://example.org"
+      }
+    }
+  ],
+  "jsonEditor": true
+}

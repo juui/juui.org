@@ -40,6 +40,10 @@ const plugins = [
         ]
       }
     }
+  },
+  {
+    register: require('hapi-swagger'),
+    options: require('./../../swagger-options.json')
   }
 ];
 
