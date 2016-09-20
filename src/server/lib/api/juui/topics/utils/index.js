@@ -5,20 +5,23 @@ const topics = {
     'id': 0,
     'topic': {
       label: 'Functions',
-      key: 'functions'
+      key: 'functions',
     },
     list: [
       {
         label: 'Introducción',
-        key: 'introduction'
+        key: 'introduction',
+        state: 'introduction'
       },
       {
         label: 'Conceptos generales',
-        key: 'concepts'
+        key: 'concepts',
+        state: 'introduction'
       },
       {
         label: 'Cálculo de imágenes',
-        key: 'concepts'
+        key: 'calculate-images',
+        state: 'calculate-images'
       }
     ]
 
