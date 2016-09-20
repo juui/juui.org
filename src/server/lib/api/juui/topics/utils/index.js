@@ -1,5 +1,7 @@
 'use strict';
 
+const models = require('./models/index');
+
 const topics = {
   'functions': {
     'id': 0,
