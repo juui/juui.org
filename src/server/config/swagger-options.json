@@ -1,6 +1,7 @@
 {
+  "schemes": ["http", "https"],
   "pathPrefixSize": 2,
-  "basePath": "/api",
+  "basePath": "/api/",
   "info": {
     "title": "Juui API Documentation",
     "description": "Juui Web Educative Application",
