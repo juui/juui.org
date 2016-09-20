@@ -7,7 +7,7 @@ const topics = {
       label: 'Functions',
       key: 'functions'
     },
-    subTopics: [
+    list: [
       {
         label: 'Introducción',
         key: 'introduction'
