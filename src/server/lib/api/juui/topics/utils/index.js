@@ -1,12 +1,29 @@
 'use strict';
 
 const topics = {
-  'functions': [
-    {
-      'id': 0,
-      label: 'Introducción'
-    }
-  ]
+  'functions': {
+    'id': 0,
+    'topic': {
+      label: 'Functions',
+      key: 'functions'
+    },
+    subTopics: [
+      {
+        label: 'Introducción',
+        key: 'introduction'
+      },
+      {
+        label: 'Conceptos generales',
+        key: 'concepts'
+      },
+      {
+        label: 'Cálculo de imágenes',
+        key: 'concepts'
+      }
+    ]
+
+  }
+
 };
 
 function getSubTopics(options) {
