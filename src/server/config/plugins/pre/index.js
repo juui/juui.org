@@ -3,8 +3,9 @@
 const documentationOptions = require('./../../swagger-options.json');
 const ip = require('ip');
 
-
-documentationOptions.host = `${ip.address()}:${(process.env.PORT || 3008)}`;
+if (process.env.PORT) {
+  documentationOptions.host = 'https://www.juui.org';
+}
 
 console.log(documentationOptions);
 
