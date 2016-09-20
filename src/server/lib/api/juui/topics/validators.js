@@ -11,8 +11,11 @@ let getSubTopics = Joi.object({})
 
 let getSubTopicDetails = Joi.object({})
   .keys({
-    detailsKey: Joi.string().trim().lowercase()
-      .description('Topic and subTopic key').example('functions:introduction')
+    topic: Joi.string().trim().lowercase()
+      .description('Topic name').example('Functions')
+      .required(),
+    subTopic: Joi.string().trim().lowercase()
+      .description('Sub Topic name').example('Introduction')
       .required()
   });
 

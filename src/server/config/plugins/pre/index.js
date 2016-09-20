@@ -7,7 +7,7 @@ if (process.env.PORT) {
   documentationOptions.host = 'www.juui.org';
 }
 
-console.log(documentationOptions);
+
 
 const plugins = [
   {

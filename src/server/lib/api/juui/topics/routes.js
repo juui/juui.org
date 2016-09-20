@@ -31,8 +31,8 @@ var routes = [
       //   strategies: []
       // },
       handler: handlers.getSubTopicDetails,
-      description: 'Add subtopic list',
-      notes: 'Subtopic list.',
+      description: 'Get subtopic details',
+      notes: 'Subtopic details.',
       tags: ['api', 'topics', 'menu'],
       validate: {
         query: validators.getSubTopicDetails
