@@ -1,5 +1,13 @@
 'use strict';
 
+const documentationOptions = require('./../../swagger-options.json');
+const ip = require('ip');
+
+
+documentationOptions.host = `${ip.address()}:${(process.env.PORT || 3008)}`;
+
+console.log(documentationOptions);
+
 const plugins = [
   {
     register: require('inert'),
@@ -43,7 +51,7 @@ const plugins = [
   },
   {
     register: require('hapi-swagger'),
-    options: require('./../../swagger-options.json')
+    options: documentationOptions
   }
 ];
 
