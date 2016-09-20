@@ -34,7 +34,7 @@ const topics = {
 function getSubTopics(options) {
   return new Promise((resolve, reject)=>{
     const topic = options.input.topic;
-    models.getSubTopics(topic);
+    //models.getSubTopics(topic); TODO: continue
     resolve(topics[topic] || []);
   });
 }
