@@ -16,7 +16,7 @@ const topics = {
       {
         label: 'Conceptos generales',
         key: 'concepts',
-        state: 'introduction'
+        state: 'concepts'
       },
       {
         label: 'Cálculo de imágenes',
