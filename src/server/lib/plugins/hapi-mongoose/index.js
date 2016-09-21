@@ -16,7 +16,7 @@ exports.register = (server, options, next) => {
 
   connector.on('ready', () => {
     server.expose('lib', connector.mongoose);
-    server.expose('connection', connector.connection);
+    server.expose('db', connector.connection);
 
     next();
   });
@@ -25,5 +25,6 @@ exports.register = (server, options, next) => {
 };
 
 exports.register.attributes = {
-  pkg: require('../package.json')
+  name: 'hapi-mongoose',
+  version: '1.0.0'
 };

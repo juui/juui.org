@@ -7,6 +7,12 @@ const subTopicSchema = new Schema({
   },
   key: {
     type: String, required: true, trim: true
+  },
+  dateCreated: {
+    type: Date, required: true, default: Date.now
+  },
+  dateUpdated: {
+    type: Date, required: true, default: Date.now
   }
 });
 
@@ -20,10 +26,13 @@ const topicSchema = new Schema({
   subTopics: [subTopicSchema],
   dateCreated: {
     type: Date, required: true, default: Date.now
+  },
+  dateUpdated: {
+    type: Date, required: true, default: Date.now
   }
 });
 
-const Topic = Mongoose.model('topics', topicSchema);
+const Topic = Mongoose.model('Topic', topicSchema);
 
 module.exports = {
   Topic

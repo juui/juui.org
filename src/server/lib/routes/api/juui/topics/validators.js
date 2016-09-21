@@ -2,21 +2,30 @@
 
 const Joi = require('joi');
 
+const lang = Joi.string().trim().lowercase()
+  .description('ISO 639-1 Language Code and ISO Country Code').example('es-CR')
+  .default('es-CR')
+  .optional();
+
+const topic = Joi.string().trim().lowercase()
+  .description('Topic name').example('Functions')
+  .required();
+
+const subTopic = Joi.string().trim().lowercase()
+  .description('Sub Topic name').example('Introduction')
+  .required();
+
 let getSubTopics = Joi.object({})
   .keys({
-    topic: Joi.string().trim().lowercase()
-      .description('Topic name').example('Functions')
-      .required()
+    topic,
+    lang
   });
 
 let getSubTopicDetails = Joi.object({})
   .keys({
-    topic: Joi.string().trim().lowercase()
-      .description('Topic name').example('Functions')
-      .required(),
-    subTopic: Joi.string().trim().lowercase()
-      .description('Sub Topic name').example('Introduction')
-      .required()
+    topic,
+    subTopic,
+    lang
   });
 
 const validators = {

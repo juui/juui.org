@@ -34,7 +34,13 @@ const topics = {
 function getSubTopics(options) {
   return new Promise((resolve, reject)=>{
     const topic = options.input.topic;
-    //models.getSubTopics(topic); TODO: continue
+    // models.getSubTopics(options.plugins, topic)
+    //   .then((result)=>{
+    //     resolve(result);
+    //   })
+    //   .catch((error)=>{
+    //     reject(error);
+    //   });
     resolve(topics[topic] || []);
   });
 }

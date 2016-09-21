@@ -13,6 +13,7 @@ script:
 
 env:
   - PORT=7777
+  - MONGODB_URI=mongodb://rb7373:rb7373@ds035786.mlab.com:35786/heroku_xdrvz1pv
 #  - CXX=g++-4.8
 
 #addons:

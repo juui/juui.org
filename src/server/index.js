@@ -4,6 +4,7 @@ const Hapi = require('hapi');
 const ip = require('ip');
 const bluebird = require('bluebird');
 const coroutine = bluebird.coroutine;
+const mongoose = require('mongoose');
 
 //////////////////////////////////////////////////
 
@@ -109,9 +110,7 @@ function startServer() {
     if (err) {
       throw err;
     } else {
-      console.log('Server running at:', server.info.uri);
-      console.log('IP: ');
-      console.log(ip.address() + ':' + (process.env.PORT || 3008));
+      console.log('Server running at:', ip.address() + ':' + (process.env.PORT || 3008));
     }
 
   });

@@ -7,8 +7,6 @@ if (process.env.PORT) {
   documentationOptions.host = 'www.juui.org';
 }
 
-
-
 const plugins = [
   {
     register: require('inert'),
@@ -53,7 +51,14 @@ const plugins = [
   {
     register: require('hapi-swagger'),
     options: documentationOptions
-  }
+  },
+  {
+    register: require('./../../../lib/plugins/hapi-mongoose/index'),
+    options: {
+      bluebird: true,
+      uri: process.env.MONGODB_URI || 'mongodb://localhost:27017'
+    }
+  },
 ];
 
 module.exports = plugins;
