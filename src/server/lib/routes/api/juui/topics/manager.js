@@ -10,11 +10,11 @@ function getSubTopics(options) {
 
     coroutine(function*() {
 
-      const subTopics = yield utils.getSubTopics(options);
+      const topic = yield utils.getSubTopics(options);
 
       resolve(
         {
-          subTopics
+          topic
         }
       );
 

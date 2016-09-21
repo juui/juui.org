@@ -5,7 +5,7 @@ const subTopicSchema = new Schema({
   label: {
     type: String, required: true, trim: true
   },
-  key: {
+  'juuiId': {
     type: String, required: true, trim: true
   },
   dateCreated: {
@@ -20,7 +20,7 @@ const topicSchema = new Schema({
   label: {
     type: String, required: true, trim: true
   },
-  key: {
+  'juuiId': {
     type: String, required: true, trim: true
   },
   subTopics: [subTopicSchema],

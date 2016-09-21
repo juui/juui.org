@@ -6,7 +6,7 @@ const subTopicSchema = new Schema({
   label: {
     type: String, required: true, trim: true
   },
-  key: {
+  'juuiId': {
     type: String, required: true, trim: true
   },
   dateCreated: {
@@ -21,7 +21,7 @@ const topicSchema = new Schema({
   label: {
     type: String, required: true, trim: true
   },
-  key: {
+  'juuiId': {
     type: String, required: true, trim: true
   },
   subTopics: [subTopicSchema],
@@ -38,35 +38,35 @@ const Topic = Mongoose.model('topic', topicSchema);
 const functionsTopic = new Topic(
   {
     "label": "Functions",
-    "key": "functions",
+    "juuiId": "functions",
     "subTopics": [
       {
         "label": "Introducción",
-        "key": "introduction"
+        "juuiId": "introduction"
       },
       {
         "label": "Conceptos generales",
-        "key": "introduction"
+        "juuiId": "generalConcepts"
       },
       {
         "label": "Cálculo de imágenes",
-        "key": "imagesCalculation"
+        "juuiId": "imagesCalculation"
       },
       {
         "label": "Cálculo de preimágenes",
-        "key": "preImagesCalculation"
+        "juuiId": "preImagesCalculation"
       },
       {
         "label": "Ámbito o rango",
-        "key": "range"
+        "juuiId": "range"
       },
       {
         "label": "Máximo dominio real",
-        "key": "maxRealDomain"
+        "juuiId": "maxRealDomain"
       },
       {
         "label": "Clasificación de funciones",
-        "key": "classification"
+        "juuiId": "classification"
       }
     ]
   }

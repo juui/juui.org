@@ -2,9 +2,14 @@
 
 const Topic = require('./topics').Topic;
 
-function getSubTopics(plugins, params) {
+function getSubTopics(params) {
 
-  return Topic.find({}).exec();
+  const topic = params.topic;
+  return Topic.findOne(
+    {
+      'juuiId': topic
+    }
+  ).exec();
 
 }
 
