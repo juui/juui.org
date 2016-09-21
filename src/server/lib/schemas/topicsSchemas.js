@@ -32,8 +32,6 @@ const topicSchema = new Schema({
   }
 });
 
-const Topic = Mongoose.model('Topic', topicSchema);
-
 module.exports = {
-  Topic
+  topicSchema
 };

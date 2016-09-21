@@ -1,8 +1,8 @@
 'use strict';
 
-const Topic = require('./topics').Topic;
-
 function getSubTopics(plugins, params) {
+
+  const Topic = plugins['hapi-mongoose'].lib.model('topic');
 
   return Topic.find({}).exec();
 

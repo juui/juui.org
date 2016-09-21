@@ -4,7 +4,6 @@ const Hapi = require('hapi');
 const ip = require('ip');
 const bluebird = require('bluebird');
 const coroutine = bluebird.coroutine;
-const mongoose = require('mongoose');
 
 //////////////////////////////////////////////////
 
@@ -13,6 +12,7 @@ const settings = require('./config/index');
 const prePlugins = require('./config/plugins/pre/index');
 const postPlugins = require('./config/plugins/post/index');
 const routes = require('./config/routes');
+const schemasManager = require('./lib/schemas/index');
 
 let server = {};
 
@@ -31,6 +31,7 @@ function* activateServer() {
   setupConnections();
   yield setupPlugins();
   setupRoutes();
+  setupSchemas();
   startServer();
 
 }
@@ -101,6 +102,10 @@ function setupRoutes() {
     isCached: false
   });
 
+}
+
+function setupSchemas() {
+  schemasManager.setupSchemas(server.plugins['hapi-mongoose'].lib);
 }
 
 function startServer() {

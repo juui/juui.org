@@ -12,10 +12,12 @@ class MongooseConnector extends EventEmitter {
       mongoose.Promise = require('bluebird');
     }
     this.mongoose = mongoose;
-    this.connection = mongoose.connect(options.uri);
+    mongoose.connect(options.uri);
+    this.connection = mongoose.connection;
 
     this.connection.on('connected', () => {
       plugin.log(['info', 'database', 'mongoose', 'mongodb'], 'Connected');
+      console.log(mongoose.connection);
       this.emit('ready');
     })
       .on('error', err => {

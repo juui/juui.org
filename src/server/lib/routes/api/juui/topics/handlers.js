@@ -11,8 +11,7 @@ function getSubTopics(request, reply) {
     reply: reply,
     input: request.query,
     plugins: {
-      libMongoose: request.server.plugins['hapi-mongoose'].lib,
-      dbMongoose: request.server.plugins['hapi-mongoose'].db
+      'hapi-mongoose': request.server.plugins['hapi-mongoose']
     },
     result: {}
   };
