@@ -9,7 +9,9 @@ db.on("error", console.error.bind(console, "connection error"));
 db.once("open", function (callback) {
   console.log("Connection succeeded.")
 
-  const Topic = require('./models/topics');
+  const topic = require('./models/topics');
+  topic.createFunctions();
+  topic.createGeometry();
 
 });
 
