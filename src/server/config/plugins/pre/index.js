@@ -59,6 +59,10 @@ const plugins = [
       uri: process.env.MONGODB_URI || 'mongodb://localhost:27017'
     }
   },
+  {
+    register: require('./../../../lib/plugins/hapi-socket-manager/index'),
+    options: {}
+  }
 ];
 
 module.exports = plugins;
