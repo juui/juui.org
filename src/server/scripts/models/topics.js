@@ -127,7 +127,7 @@ function createGeometry() {
         },
         {
           "label": "Simetría",
-          "juuiId": "Symmetry",
+          "juuiId": "symmetry",
           "avatar": "https://res.cloudinary.com/duspwfh58/image/upload/v1474663309/juui/avatars/default.svg"
         },
         {
