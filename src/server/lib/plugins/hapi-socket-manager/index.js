@@ -5,7 +5,10 @@ let util = require('./util.js');
 let channels = require('./channels');
 let io;
 let currentServer;
-let mainChannel;
+let namespaces = ['main'];
+let mainNamespace;
+
+let users = new Map();
 
 exports.register = function (server, options, next) {
 
@@ -13,7 +16,7 @@ exports.register = function (server, options, next) {
 
   io = require('socket.io')(currentServer.select('api').listener, {});
 
-  mainChannel = io.of('/main');
+  mainNamespace = io.of('/main');
 
   start(next);
 
@@ -22,29 +25,41 @@ exports.register = function (server, options, next) {
 function start(done) {
 
   console.log('socket ready');
-  activateMainChannel();
+  activateMainNamespace();
 
   done();
 
 }
 
-function activateMainChannel() {
+function activateMainNamespace() {
 
-  mainChannel.on('connection', function (socket) {
+  mainNamespace.on('connection', (socket)=> {
 
-    console.log(' *** onConnection to --->', 'mainChannel', 'id:', socket.id);
+    const id = socket.id;
+
+    console.log(' *** onConnection to --->', 'mainNamespace', 'id:', id);
 
     socket.emit('identification',
       {
         status: 'ok',
         type: 'identification',
-        id: socket.id
+        id: id
       }
     );
 
+    socket.on('identification', (userInfo)=> {
+
+      console.log(' *** onIdentification to ---> ', 'mainNamespace');
+      console.log(userInfo);
+
+      users.set(id, userInfo);
+
+    });
+
     socket.on('disconnect', function () {
 
-      console.log(' *** onDisconnect to ---> ', 'mainChannel');
+      console.log(' *** onDisconnect to ---> ', 'mainNamespace');
+      users.delete(id);
 
     });
 
