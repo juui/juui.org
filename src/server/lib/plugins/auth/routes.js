@@ -49,7 +49,7 @@ const routes = [
     }
   },
   {
-    method: 'GET',
+    method: 'POST',
     path: '/auth',
     config: {
       handler(request, reply){
