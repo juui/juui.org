@@ -1,6 +1,6 @@
 'use strict';
 
-var Handler = require('./handlers');
+const handlers = require('./handlers');
 
 const routes = [
   {
@@ -8,7 +8,7 @@ const routes = [
     method: 'GET',
     config: {
       auth: 'twitter',
-      handler: Handler.sessionManagement
+      handler: handlers.sessionManagement
     }
   },
   {
@@ -16,7 +16,7 @@ const routes = [
     method: 'GET',
     config: {
       auth: 'facebook',
-      handler: Handler.sessionManagement
+      handler: handlers.sessionManagement
     }
 
   },
@@ -25,7 +25,7 @@ const routes = [
     method: 'GET',
     config: {
       auth: 'google',
-      handler: Handler.sessionManagement
+      handler: handlers.sessionManagement
     }
   },
   {
@@ -41,6 +41,41 @@ const routes = [
         }
         return reply.redirect('/');
       },
+      auth: {
+        strategy: 'session',
+        mode: 'try'
+      },
+      plugins: {'hapi-auth-cookie': {redirectTo: false}}
+    }
+  },
+  {
+    method: 'GET',
+    path: '/auth',
+    config: {
+      handler(request, reply){
+
+        let auth = request.auth;
+
+        if (auth.isAuthenticated) {
+
+          auth.credentials.token = undefined;
+
+          reply(
+            {
+              auth: auth.credentials,
+              isLoggedIn: true
+            });
+
+        } else {
+          reply(
+            {
+              isLoggedIn: false
+            });
+        }
+
+      },
+      tags: ['web'],
+      validate: {},
       auth: {
         strategy: 'session',
         mode: 'try'
