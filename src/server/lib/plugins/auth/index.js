@@ -34,7 +34,7 @@ exports.register = function (server, options, next) {
     {
       provider: 'twitter',
       password: process.env.PASSWORD_TWITTER || 'B182393C267BB36131E0A1B90252573677C72D42D25E770701DBC077228DDF3A',
-      clientId: 'z7CzhqNUaMlw96UrNYH0ARqLO',
+      clientId: 'J6tHMW2itoxqALJMJmzLhElsV',
       clientSecret: process.env.SECRET_TWITTER,
       isSecure: true,
       location: 'https://www.juui.org',
