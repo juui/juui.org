@@ -8,7 +8,6 @@ const mongoose = require('mongoose');
 
 //////////////////////////////////////////////////
 
-const validations = require('./config/auth/index');
 const settings = require('./config/index');
 const prePlugins = require('./config/plugins/pre/index');
 const postPlugins = require('./config/plugins/post/index');
