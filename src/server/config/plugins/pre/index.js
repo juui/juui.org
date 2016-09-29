@@ -62,6 +62,24 @@ const plugins = [
   {
     register: require('./../../../lib/plugins/hapi-socket-manager/index'),
     options: {}
+  },
+  {
+    register: require('hapi-auth-cookie'),
+    options: {}
+  },
+  {
+    register: require('bell'),
+    options: {}
+  },
+  {
+    register: require('./../../../lib/plugins/hapi-redis-client/index'),
+    options: {
+      host: 'ec2-54-163-233-146.compute-1.amazonaws.com',
+      port: '18419',
+      options: {
+        password: 'pbci9e4r4ep5hj9p3m107jitl01'
+      }
+    }
   }
 ];
 
