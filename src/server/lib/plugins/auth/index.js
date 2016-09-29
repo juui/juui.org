@@ -9,10 +9,10 @@ exports.register = function (server, options, next) {
   server.auth.strategy('facebook', 'bell',
     {
       provider: 'facebook',
-      password: process.env.SECRET_FACEBOOK || 'B182393C267BB36131E0A1B90252573677C72D42D25E770701DBC077228DDF3A',
-      clientId: '203280530023571', // fill in your FB ClientId here
-      clientSecret: '238b5c7b374c2537081c0cd301b24548', // fill in your FB Client Secret here
-      isSecure: true, // Terrible idea but required if not using HTTPS
+      password: process.env.PASSWORD_FACEBOOK || 'B182393C267BB36131E0A1B90252573677C72D42D25E770701DBC077228DDF3A',
+      clientId: '203280530023571',
+      clientSecret: process.env.SECRET_FACEBOOK,
+      isSecure: true,
       location: 'https://www.juui.org',
       forceHttps: true
     }
@@ -21,10 +21,10 @@ exports.register = function (server, options, next) {
   server.auth.strategy('google', 'bell',
     {
       provider: 'google',
-      password: process.env.SECRET_GOOGLE || 'B182393C267BB36131E0A1B90252573677C72D42D25E770701DBC077228DDF3A',
-      clientId: '795777413258-5aal4m6ndu98huaoo2gn82q0hu62va7q.apps.googleusercontent.com', // fill in your Google ClientId here
-      clientSecret: 'bTmKsc5PbVaUbN2AYOzz1yJi', // fill in your Google Client Secret here
-      isSecure: true, // Terrible idea but required if not using HTTPS,
+      password: process.env.PASSWORD_GOOGLE || 'B182393C267BB36131E0A1B90252573677C72D42D25E770701DBC077228DDF3A',
+      clientId: '795777413258-5aal4m6ndu98huaoo2gn82q0hu62va7q.apps.googleusercontent.com',
+      clientSecret: process.env.SECRET_GOOGLE,
+      isSecure: true,
       location: 'https://www.juui.org',
       forceHttps: true
     }
@@ -33,9 +33,9 @@ exports.register = function (server, options, next) {
   server.auth.strategy('twitter', 'bell',
     {
       provider: 'twitter',
-      password: process.env.SECRET_TWITTER || 'B182393C267BB36131E0A1B90252573677C72D42D25E770701DBC077228DDF3A',
+      password: process.env.PASSWORD_TWITTER || 'B182393C267BB36131E0A1B90252573677C72D42D25E770701DBC077228DDF3A',
       clientId: 'z7CzhqNUaMlw96UrNYH0ARqLO',
-      clientSecret: 'q8QoEfj2HIdrDrUskUJV1Hw4FvpP7UObuoOhLLvEBwY3HxzFeO',
+      clientSecret: process.env.SECRET_TWITTER,
       isSecure: true,
       location: 'https://www.juui.org',
       forceHttps: true
@@ -43,8 +43,8 @@ exports.register = function (server, options, next) {
   );
 
   server.auth.strategy('session', 'cookie', {
-    password: process.env.SECRET_COOKIES || 'B182393C267BB36131E0A1B90252573677C72D42D25E770701DBC077228DDF3A', // give any string you think is right password to encrypted
-    cookie: 'sid-juui', // cookie name to use, usually sid-<appname>
+    password: process.env.SECRET_COOKIES || 'B182393C267BB36131E0A1B90252573677C72D42D25E770701DBC077228DDF3A',
+    cookie: 'sid-juui',
     redirectTo: '/',
     isSecure: true,
     validateFunc: validators.validateClientCookies
