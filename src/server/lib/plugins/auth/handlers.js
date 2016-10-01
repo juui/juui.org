@@ -57,7 +57,7 @@ function getUserSession(credentials) {
   const session = credentials;
   console.log('getUserSession', session);
   credentials.juui = {
-
+    start: Date.now()
   };
   return session;
 }

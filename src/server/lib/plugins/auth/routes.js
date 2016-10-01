@@ -8,13 +8,6 @@ const routes = [
     method: 'GET',
     config: {
       auth: 'twitter',
-      pre: [
-        function (request, reply) {
-          if (request.query.denied) {
-            return reply.redirect('/').takeover();
-          }
-        }
-      ],
       handler: handlers.sessionManagement
     }
   },
