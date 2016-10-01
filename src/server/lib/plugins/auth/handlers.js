@@ -5,8 +5,12 @@ const MAX_EXPIRE_CLIENT_SESSION = config.redis.expiration.authClient;
 
 function sessionManagement(request, reply) {
 
+  if (request.query.denied){
+    return reply.redirect('/');
+  }
+
   if (!request.auth.isAuthenticated) {
-    reply.redirect('/');
+    return reply.redirect('/');
   }
 
   const credentials = request.auth.credentials;
