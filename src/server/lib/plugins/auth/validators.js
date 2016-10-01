@@ -64,6 +64,8 @@ function validateClientCookies(request, session, callback) {
 }
 
 function isValidSession(session) {
+  console.log('SESSION');
+  console.log(session);
   return true;
 }
 

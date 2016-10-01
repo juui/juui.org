@@ -56,6 +56,9 @@ function sessionManagement(request, reply) {
 function getUserSession(credentials) {
   const session = credentials;
   console.log('getUserSession', session);
+  credentials.juui = {
+
+  };
   return session;
 }
 
