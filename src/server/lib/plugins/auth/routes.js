@@ -11,7 +11,7 @@ const routes = [
       pre: [
         function (request, reply) {
           if (request.query.denied) {
-            return reply.redirect('/');
+            return reply.redirect('/').takeover();
           }
         }
       ],
