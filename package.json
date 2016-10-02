@@ -18,8 +18,8 @@
     "threejs"
   ],
   "engines": {
-    "node": "6.6.0",
-    "npm": "3.10.7"
+    "node": "6.7.0",
+    "npm": "3.10.8"
   },
   "author": "Rubenabix",
   "license": "MIT",
