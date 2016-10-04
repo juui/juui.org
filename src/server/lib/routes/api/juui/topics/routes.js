@@ -1,10 +1,10 @@
 'use strict';
 
-var constants = require('./constants.js');
-var handlers = require('./handlers');
-var validators = require('./validators');
+const constants = require('./constants.js');
+const handlers = require('./handlers');
+const validators = require('./validators');
 
-var routes = [
+const routes = [
   {
     method: 'GET',
     path: `/api/topics/${constants.version}/list`,

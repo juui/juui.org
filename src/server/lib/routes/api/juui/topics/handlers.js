@@ -28,8 +28,7 @@ function getSubTopicDetails(request, reply) {
     request: request,
     reply: reply,
     input: request.query,
-    plugins: {},
-    result: {}
+    plugins: {}
   };
 
   manager.getSubTopicDetails(options)
