@@ -1,8 +1,6 @@
 'use strict';
 
-const bluebird = require('bluebird');
 const manager = require('./manager');
-const async = bluebird.coroutine;
 
 function getSubTopics(request, reply) {
 
@@ -11,8 +9,7 @@ function getSubTopics(request, reply) {
     reply: reply,
     input: request.query,
     plugins: {
-    },
-    result: {}
+    }
   };
 
   manager.getSubTopics(options)
