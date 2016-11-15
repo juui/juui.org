@@ -12,6 +12,9 @@ const subTopicSchema = new Schema({
   avatar: {
     type: String, required: true, trim: true
   },
+  isEnable: {
+    type: Boolean, required: true, default: false
+  },
   dateCreated: {
     type: Date, required: true, default: Date.now
   },
@@ -123,7 +126,8 @@ function createGeometry() {
         {
           "label": "Polígonos regulares",
           "juuiId": "regularPolygons",
-          "avatar": "https://res.cloudinary.com/duspwfh58/image/upload/v1474663309/juui/avatars/default.svg"
+          "avatar": "https://res.cloudinary.com/duspwfh58/image/upload/v1474663309/juui/avatars/default.svg",
+          "isEnable": true
         },
         {
           "label": "Simetría",
